@@ -1,0 +1,79 @@
+@import "utils";
+
+.help-patient-section {
+  @include flex(row, space-between, center);
+  overflow-x: hidden;
+  padding: 4rem;
+  width: 100%;
+  .left-help-patient-section {
+    flex-basis: 50%;
+    > p {
+      &:nth-child(1) {
+        color: $green;
+        font-size: 16px;
+      }
+      color: $paracolor;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    > h1 {
+      width: 87%;
+      font-size: 2.5rem;
+      color: $dark;
+      margin-bottom: 1rem;
+    }
+    .info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1rem;
+      margin-top: 2rem;
+      > div {
+        @include flex(row, flex-start, center);
+        border: 1px solid #ccc;
+        padding: 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.2s;
+        > svg {
+          color: $green;
+          font-weight: bold;
+          margin-right: 0.5rem;
+        }
+        > p {
+          color: $dark;
+          font-weight: bold;
+        }
+        &:hover {
+          border: 1px solid $green;
+        }
+      }
+    }
+  }
+  .right-help-patient-section {
+    flex-basis: 50%;
+    > img {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .help-patient-section {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .help-patient-section {
+    padding: 4rem 1rem;
+    .left-help-patient-section {
+      .info {
+        grid-template-columns: repeat(1, 1fr);
+      }
+      > h1 {
+        width: 100%;
+        font-size: 1.8rem;
+      }
+    }
+  }
+}

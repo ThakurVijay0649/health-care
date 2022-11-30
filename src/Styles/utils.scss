@@ -1,0 +1,17 @@
+$black: #000;
+$dark: #1b2336;
+$white: #fff;
+$gray: #ccc;
+$dark-gray: #333;
+$light-gray: #eee;
+$red: #f00;
+$green: #00ca99;
+$lightblue: #2279fc;
+$paracolor: #415674;
+
+@mixin flex($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}

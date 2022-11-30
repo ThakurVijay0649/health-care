@@ -1,0 +1,84 @@
+@import "utils";
+
+.provide-section {
+  @include flex(row, space-between, center);
+  overflow-x: hidden;
+  padding: 4rem;
+  width: 100%;
+  .left-provide {
+    flex-basis: 40%;
+    > img {
+      width: 100%;
+    }
+  }
+  .right-provide {
+    flex-basis: 60%;
+    > p {
+      &:nth-child(1) {
+        color: $green;
+        font-size: 16px;
+      }
+      color: $paracolor;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    > h1 {
+      width: 87%;
+      font-size: 2.5rem;
+      color: $dark;
+      margin-bottom: 1rem;
+    }
+    > div {
+      @include flex(row, flex-start, center);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin: 1rem 0;
+      position: relative;
+      padding: 1rem;
+      > h1 {
+        font-size: 2.5rem;
+        color: $dark;
+        margin-right: 1rem;
+        transition: all 0.3s;
+      }
+      > p {
+        font-size: 1.2rem;
+        color: $dark;
+        font-weight: bold;
+      }
+      &::before {
+        content: "";
+        width: 0.3%;
+        height: 100%;
+        background-color: $green;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        transition: all 0.3s;
+      }
+      &:hover {
+        &::before {
+          width: 100px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .provide-section {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .provide-section {
+    padding: 4rem 1rem;
+    .right-provide {
+      h1 {
+        width: 100%;
+        font-size: 1.8rem;
+      }
+    }
+  }
+}

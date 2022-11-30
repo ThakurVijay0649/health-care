@@ -1,0 +1,137 @@
+@import "utils";
+
+.home-section {
+  @include flex(row, center, flex-start);
+  overflow-x: hidden;
+  width: 100%;
+  padding: 2rem;
+  .left-home {
+    flex-basis: 60%;
+    padding-top: 4rem;
+    > .start-journey {
+      color: $green;
+      font-size: 1.5rem;
+    }
+    > h1 {
+      color: $dark;
+      font-size: 5rem;
+    }
+    .home-para {
+      color: $dark-gray;
+      font-size: 1.3rem;
+    }
+    .btns {
+      padding-top: 2rem;
+      @include flex(row, flex-start, center);
+      .get-started-btn {
+        padding: 1rem 2.5rem;
+        background: $lightblue;
+        border: 1px solid $lightblue;
+        color: white;
+        font-size: 1.1rem;
+        cursor: pointer;
+        margin-right: 1rem;
+        transition: all 0.2s;
+        &:hover {
+          background: $dark;
+          border: 1px solid $dark;
+        }
+      }
+      .watch-video-btn {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        @include flex(row, center, center);
+        > svg {
+          width: 60px;
+          height: 60px;
+          border: 1px solid $green;
+          color: $green;
+          padding: 10px;
+          margin-right: 0.4rem;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+        > p {
+          color: $green;
+          font-size: 1.1rem;
+        }
+      }
+    }
+    .contact-link {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+    .social-links {
+      margin-top: 1rem;
+      @include flex(row, flex-start, center);
+      font-size: 1.2rem;
+      > p {
+        @include flex(row, center, center);
+      }
+      .social-icons {
+        @include flex(row, center, center);
+        > svg {
+          color: $dark;
+          font-size: 1.5rem;
+          margin-right: 0.5rem;
+          cursor: pointer;
+          transition: all 0.2s;
+          &:hover {
+            color: $lightblue;
+          }
+        }
+      }
+    }
+  }
+  .right-home {
+    flex-basis: 40%;
+    position: relative;
+    > img {
+      width: 100%;
+    }
+    &::after {
+      content: "";
+      width: 90%;
+      height: 90%;
+      background-color: $green;
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      left: 50%;
+      transform: skewX(10deg) translate(-50%, -50%);
+      border-radius: 100px;
+    }
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .home-section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .right-home {
+      &::after {
+        left: 70%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .home-section {
+    .left-home {
+      > h1 {
+        font-size: 2.5rem;
+      }
+      .btns {
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-start;
+        .get-started-btn {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}

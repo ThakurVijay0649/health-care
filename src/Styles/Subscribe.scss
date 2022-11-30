@@ -1,0 +1,73 @@
+@import "utils";
+
+.subscribe {
+  @include flex(row, space-between, center);
+  padding: 4rem;
+  width: 90%;
+  margin: 3rem auto;
+  border-radius: 10px;
+  background-color: $lightblue;
+  color: $white;
+  .left-subscribe {
+    flex-basis: 50%;
+    h1 {
+      margin-bottom: 1rem;
+    }
+    p {
+      font-weight: bold;
+    }
+  }
+  .right-subscribe {
+    flex-basis: 50%;
+    form {
+      background-color: white;
+      @include flex(row, flex-start, center);
+      border-radius: 10px;
+      input {
+        width: 100%;
+        border: none;
+        outline: none;
+        padding: 1.5rem;
+        border-radius: 10px;
+      }
+      button {
+        margin-right: 0.5rem;
+        padding: 1rem 2rem;
+        background: $lightblue;
+        color: white;
+        border: 1px solid $lightblue;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s;
+        &:hover {
+          background-color: $green;
+          border: 1px solid $green;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .subscribe {
+    flex-direction: column;
+    text-align: center;
+    line-height: 40px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .subscribe {
+    padding: 4rem 1rem;
+    width: 100%;
+    .right-subscribe {
+      flex-basis: 100% !important;
+      width: 100%;
+      form {
+        flex-direction: column;
+        width: 100%;
+        padding-bottom: 1rem;
+      }
+    }
+  }
+}

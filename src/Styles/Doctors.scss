@@ -1,0 +1,33 @@
+@import "utils";
+
+.doctors-section {
+  text-align: center;
+  > p {
+    font-size: 1rem;
+    font-weight: bolder;
+    color: $green;
+  }
+  > h1 {
+    font-size: 3rem;
+    color: $dark;
+  }
+  .doctor-row {
+    @include flex(row, center, center);
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    margin-top: 1rem;
+    .doctor-card {
+      width: 280px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      padding: 1rem;
+      margin: 1rem;
+      > img {
+        width: 100%;
+      }
+      h1 {
+        font-size: 20px;
+        margin: 1rem 0;
+      }
+    }
+  }
+}

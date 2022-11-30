@@ -1,0 +1,18 @@
+@import "utils";
+
+.image-swiper {
+  @include flex(row, space-around, center);
+  width: 80%;
+  margin: 5rem auto;
+  flex-wrap: wrap;
+  transition: all 0.2s;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  > img {
+    width: 150px;
+    height: 100px;
+    object-fit: contain;
+  }
+}
